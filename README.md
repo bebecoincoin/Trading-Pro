@@ -8,14 +8,19 @@ Application desktop de trading educatif — simulation, marches, forum, cours.
 
 [![License: MIT](LICENSE)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/bebecoincoin/Trading-Pro)](https://github.com/bebecoincoin/Trading-Pro/releases)
+[![Site web](https://img.shields.io/badge/Site-trading--pro.pages.dev-orange)](https://trading-pro-e3u.pages.dev/)
 
-[Telecharger](#telechargement) · [Installation](#installation) · [Code source](#code-source)
+**Site officiel :** [https://trading-pro-e3u.pages.dev/](https://trading-pro-e3u.pages.dev/)
+
+[Site web](https://trading-pro-e3u.pages.dev/) · [Telecharger](#telechargement) · [Installation](#installation) · [Code source](#code-source)
 
 </div>
 
 ---
 
 ## Telechargement
+
+Page de telechargement : **[trading-pro-e3u.pages.dev](https://trading-pro-e3u.pages.dev/)**
 
 Binaires sur **[GitHub Releases](https://github.com/bebecoincoin/Trading-Pro/releases)** (v1.0.0) :
 
@@ -126,3 +131,11 @@ Assets in-app : `src/assets/logo.png`, `src/assets/athena.gif`
 [MIT](LICENSE) — Athena, 2026
 
 **Disclaimer :** application educative, pas un conseil financier.
+
+---
+
+<div align="center">
+
+[Site](https://trading-pro-e3u.pages.dev/) · [Releases](https://github.com/bebecoincoin/Trading-Pro/releases) · [Code](https://github.com/bebecoincoin/Trading-Pro)
+
+</div>
