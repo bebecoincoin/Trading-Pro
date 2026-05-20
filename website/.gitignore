@@ -1,0 +1,3 @@
+# Binaires trop lourds pour Git — utiliser `scripts/prepare-website.sh` avant hebergement local
+downloads/*.AppImage
+downloads/*.zip

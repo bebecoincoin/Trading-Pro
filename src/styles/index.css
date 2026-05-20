@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =================================================================
+   THEMES — variables au format R G B (space-separated) pour
+   permettre les modifieurs Tailwind d'opacite (bg-accent/30, etc.)
+   ================================================================= */
+
+:root,
+.theme-dark {
+  --bg: 10 13 20;
+  --bg-soft: 15 19 28;
+  --bg-card: 20 25 38;
+  --bg-border: 31 37 51;
+  --text: 230 233 239;
+  --text-muted: 138 145 163;
+  --text-dim: 91 98 115;
+  --accent: 34 211 238;
+  --accent-green: 22 199 132;
+  --accent-red: 234 57 67;
+  --accent-gold: 247 181 0;
+  --accent-violet: 139 92 246;
+  --grid-line: rgba(255, 255, 255, 0.025);
+  --bg-app:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, 0.08), transparent 50%),
+    radial-gradient(900px 500px at 110% 10%, rgba(139, 92, 246, 0.07), transparent 50%),
+    rgb(10 13 20);
+  color-scheme: dark;
+}
+
+.theme-midnight {
+  --bg: 5 9 24;
+  --bg-soft: 10 16 41;
+  --bg-card: 15 24 56;
+  --bg-border: 26 37 82;
+  --text: 232 236 255;
+  --text-muted: 139 155 208;
+  --text-dim: 74 86 128;
+  --accent: 96 165 250;
+  --accent-green: 52 211 153;
+  --accent-red: 248 113 113;
+  --accent-gold: 251 191 36;
+  --accent-violet: 167 139 250;
+  --grid-line: rgba(96, 165, 250, 0.035);
+  --bg-app:
+    radial-gradient(1400px 700px at 50% -10%, rgba(96, 165, 250, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 100% 100%, rgba(167, 139, 250, 0.10), transparent 50%),
+    rgb(5 9 24);
+  color-scheme: dark;
+}
+
+.theme-aurora {
+  --bg: 6 16 24;
+  --bg-soft: 11 30 34;
+  --bg-card: 14 42 48;
+  --bg-border: 22 58 63;
+  --text: 232 255 251;
+  --text-muted: 127 193 183;
+  --text-dim: 72 123 117;
+  --accent: 16 217 196;
+  --accent-green: 74 222 128;
+  --accent-red: 248 113 113;
+  --accent-gold: 253 224 71;
+  --accent-violet: 168 85 247;
+  --grid-line: rgba(16, 217, 196, 0.04);
+  --bg-app:
+    radial-gradient(1000px 600px at 20% 0%, rgba(16, 217, 196, 0.16), transparent 50%),
+    radial-gradient(900px 500px at 90% 80%, rgba(74, 222, 128, 0.10), transparent 50%),
+    radial-gradient(700px 400px at 50% 110%, rgba(168, 85, 247, 0.08), transparent 60%),
+    rgb(6 16 24);
+  color-scheme: dark;
+}
+
+.theme-sunset {
+  --bg: 20 8 13;
+  --bg-soft: 29 15 23;
+  --bg-card: 40 21 32;
+  --bg-border: 61 31 48;
+  --text: 255 233 225;
+  --text-muted: 200 153 150;
+  --text-dim: 126 91 91;
+  --accent: 255 107 53;
+  --accent-green: 20 184 166;
+  --accent-red: 239 68 68;
+  --accent-gold: 251 191 36;
+  --accent-violet: 236 72 153;
+  --grid-line: rgba(255, 107, 53, 0.04);
+  --bg-app:
+    radial-gradient(1100px 600px at 10% 0%, rgba(255, 107, 53, 0.16), transparent 55%),
+    radial-gradient(900px 500px at 100% 100%, rgba(236, 72, 153, 0.12), transparent 50%),
+    rgb(20 8 13);
+  color-scheme: dark;
+}
+
+.theme-light {
+  --bg: 248 250 252;
+  --bg-soft: 255 255 255;
+  --bg-card: 255 255 255;
+  --bg-border: 226 232 240;
+  --text: 15 23 42;
+  --text-muted: 71 85 105;
+  --text-dim: 148 163 184;
+  --accent: 8 145 178;
+  --accent-green: 5 150 105;
+  --accent-red: 220 38 38;
+  --accent-gold: 217 119 6;
+  --accent-violet: 124 58 237;
+  --grid-line: rgba(15, 23, 42, 0.03);
+  --bg-app:
+    radial-gradient(1200px 600px at 10% -10%, rgba(8, 145, 178, 0.06), transparent 55%),
+    radial-gradient(900px 500px at 110% 10%, rgba(124, 58, 237, 0.05), transparent 55%),
+    rgb(248 250 252);
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--bg-border));
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--text-dim));
+  background-clip: padding-box;
+}
+
+@layer components {
+  .card { @apply bg-bg-card border border-bg-border rounded-xl shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition border border-transparent; }
+  .btn-primary { @apply btn bg-accent text-bg hover:brightness-110; }
+  .btn-ghost { @apply btn border-bg-border text-text hover:bg-bg-soft; }
+  .btn-soft { @apply btn bg-bg-soft text-text border-bg-border; }
+  .btn-soft:hover { border-color: rgb(var(--accent) / 0.4); }
+  .input { @apply w-full bg-bg-soft border border-bg-border rounded-lg px-3.5 py-2.5 text-sm text-text placeholder:text-text-dim focus:outline-none transition; }
+  .input:focus { border-color: rgb(var(--accent) / 0.6); box-shadow: 0 0 0 2px rgb(var(--accent) / 0.2); }
+  .label { @apply block text-[12px] uppercase tracking-wider text-text-muted mb-1.5 font-semibold; }
+  .badge { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold uppercase tracking-wide; }
+  .badge-green { @apply badge text-accent-green; background: rgb(var(--accent-green) / 0.15); }
+  .badge-red { @apply badge text-accent-red; background: rgb(var(--accent-red) / 0.15); }
+  .badge-violet { @apply badge text-accent-violet; background: rgb(var(--accent-violet) / 0.15); }
+  .badge-gold { @apply badge text-accent-gold; background: rgb(var(--accent-gold) / 0.15); }
+}
+
+.bg-app { background: var(--bg-app); }
+
+.glass {
+  background:
+    linear-gradient(180deg, rgb(var(--bg-card) / 0.7), rgb(var(--bg-soft) / 0.85));
+  backdrop-filter: blur(8px);
+}
+
+.no-drag { -webkit-app-region: no-drag; }
+.drag { -webkit-app-region: drag; }
+
+.gradient-text {
+  background: linear-gradient(90deg, rgb(var(--accent)) 0%, rgb(var(--accent-violet)) 50%, rgb(var(--accent-gold)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtle-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
